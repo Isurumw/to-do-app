@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`check the behaviour of the save-todo natwork service save todos failed with an error 1`] = `"Some API Error"`;
+
+exports[`check the behaviour of the save-todo natwork service update todos successful 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      "todos/DOsnkr0lMwVzhU5D77ZU",
+      "PATCH",
+      Object {
+        "fields": Object {
+          "category": Object {
+            "stringValue": "personal",
+          },
+          "description": Object {
+            "stringValue": "Write down your goals and priorities",
+          },
+        },
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": Object {
+        "createTime": "2021-09-28T06:44:49.564824Z",
+        "fields": Object {
+          "category": Object {
+            "stringValue": "personal",
+          },
+          "description": Object {
+            "stringValue": "Write down your goals and priorities",
+          },
+        },
+        "name": "projects/todo-8013f/databases/(default)/documents/todos/DOsnkr0lMwVzhU5D77ZU",
+      },
+    },
+  ],
+}
+`;
