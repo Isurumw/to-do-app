@@ -26,7 +26,7 @@ const BottomTabNavigator: React.FC = () => {
 
   useEffect(() => {
     dispatch(onUser());
-    dispatch(onFetchTodo());
+    dispatch(onFetchTodo(true));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
