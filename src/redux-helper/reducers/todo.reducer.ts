@@ -2,7 +2,7 @@ import {TodoAction} from '../actions/todo/todo.action';
 
 type TodoState = {
   todos: Todo[];
-  loadingState: 'deleting' | 'fetching' | 'saving' | 'none';
+  loadingState: 'deleting' | 'fetching' | 'refreshing' | 'saving' | 'none';
   savedTodo?: Todo;
   didDelete: boolean;
   error?: string;

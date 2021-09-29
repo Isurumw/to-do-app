@@ -71,8 +71,8 @@ const HomeScreen: React.FC = () => {
           contentContainerStyle={styles.containerList}
           refreshControl={
             <RefreshControl
-              refreshing={loadingState === 'fetching'}
-              onRefresh={() => dispatch(onFetchTodo())}
+              refreshing={loadingState === 'refreshing'}
+              onRefresh={() => dispatch(onFetchTodo(true))}
               tintColor={foundation.grape}
               colors={[foundation.grape]}
             />

@@ -25,7 +25,7 @@ interface ActionResetTodo {
 
 interface ActionStateTodo {
   readonly type: 'ON_STATE_TODO';
-  payload: 'deleting' | 'fetching' | 'saving' | 'none';
+  payload: 'deleting' | 'fetching' | 'refreshing' | 'saving' | 'none';
 }
 
 interface ActionResetAllTodos {
@@ -56,12 +56,12 @@ export const onResetAllTodos = () => {
   };
 };
 
-export const onFetchTodo = () => {
+export const onFetchTodo = (refresh: boolean = false) => {
   return async (dispatch: Dispatch<TodoAction>) => {
     try {
       dispatch({
         type: 'ON_STATE_TODO',
-        payload: 'fetching',
+        payload: refresh ? 'refreshing' : 'fetching',
       });
 
       const todos = await fetchTodos();
