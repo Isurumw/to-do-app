@@ -3,17 +3,6 @@ import {StyleSheet} from 'react-native';
 import {fontStyles} from 'styles/font.style';
 import {foundation} from 'styles/colors';
 
-const common = Object.assign(
-  StyleSheet.create({
-    shadow: {
-      shadowColor: foundation.satin,
-      shadowOffset: {width: 1, height: 1},
-      shadowRadius: 7,
-      elevation: 10,
-    },
-  }),
-);
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -29,7 +18,10 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 40,
     borderTopRightRadius: 40,
     shadowOpacity: 0.4,
-    ...common.shadow,
+    shadowColor: foundation.satin,
+    shadowOffset: {width: 1, height: 1},
+    shadowRadius: 7,
+    elevation: 10,
     paddingTop: 10,
   },
   title: {

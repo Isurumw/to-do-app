@@ -5,15 +5,17 @@ import {useDispatch} from 'react-redux';
 import {onUser} from 'redux-helper/actions/user/user.action';
 import {onFetchTodo} from 'redux-helper/actions/todo/todo.action';
 
-import {HomeScreen, ProfileScreen} from 'screens';
+import {HomeScreen, FloorPlanScreen, ProfileScreen} from 'screens';
 
 import HomeIcon from 'assets/images/svg/home.svg';
 import UserIcon from 'assets/images/svg/user.svg';
+import HousePlanIcon from 'assets/images/svg/house-plan.svg';
 
 import {foundation} from 'styles/colors';
 
 type BottomTabParams = {
   Home: undefined;
+  'Floor Plan': undefined;
   Profile: undefined;
 };
 
@@ -36,8 +38,10 @@ const BottomTabNavigator: React.FC = () => {
         tabBarIcon: ({color}) => {
           if (route.name === 'Home') {
             return <HomeIcon width={23} height={23} fill={color} />;
-          } else {
+          } else if (route.name === 'Profile') {
             return <UserIcon width={20} height={20} fill={color} />;
+          } else {
+            return <HousePlanIcon width={23} height={23} fill={color} />;
           }
         },
       })}>
@@ -45,6 +49,11 @@ const BottomTabNavigator: React.FC = () => {
         options={{headerShown: false}}
         name="Home"
         component={HomeScreen}
+      />
+      <Tab.Screen
+        options={{headerShown: false}}
+        name="Floor Plan"
+        component={FloorPlanScreen}
       />
       <Tab.Screen
         options={{headerShown: false}}
